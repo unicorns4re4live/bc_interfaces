@@ -10,7 +10,7 @@ import (
 )
 
 //Цепляемся к контракту
-func LoadContract(address string) *contract.Storage {
+func LoadContract(address string) *contract.Change {
 	var configs EthereumConfigs
 	plan, _:= ioutil.ReadFile("EthereumConfig.json") // JSON с конфигами
 	err := json.Unmarshal(plan, &configs)
@@ -22,7 +22,7 @@ func LoadContract(address string) *contract.Storage {
 
 	contractAddr := common.HexToAddress(address)
 
-	instance, err := contract.NewStorage(contractAddr, client)
+	instance, err := contract.NewChange(contractAddr, client)
 
 	if err != nil {
 		log.Fatal("Чёто пошло не так при создании инстанса")

@@ -8,13 +8,6 @@ import (
 
 
 
-type commandID int
-
-const (
-	CMD_AUTH commandID = iota
-	CMD_QUIT
-)
-
 type command struct {
 	id string
 	args []string
@@ -23,6 +16,6 @@ type command struct {
 type cli struct {
 	commands chan command
 	ethClient *ethclient.Client
-	contract *contract.Storage
+	contract *contract.Change
 	userKey *ecdsa.PrivateKey
 }

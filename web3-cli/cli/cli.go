@@ -17,10 +17,30 @@ func (c *cli) ReadCommands() {
 		case "auth":
 			auth(c,cmd.args)
 			fmt.Println("AUTH")
-		case "retrieve":
-			retrieve(c)
-		case "store":
-			store(c, cmd.args)
+		case "templates":
+			get_template_names(c)
+			fmt.Println("TEMPLATES")
+		case "template":
+			get_template_by_name(c, cmd.args)
+			fmt.Println("TEMPLATE BY NAME")
+		case "userlist": {
+			get_userlist(c)
+			fmt.Println("USERLIST")
+		}
+		case "user": {
+			get_user(c, cmd.args)
+			fmt.Println("USER")
+		}
+		case "create": {
+			create_user(c, cmd.args)
+			fmt.Println("USER CREATED")
+		}
+
+
+		case "admin_amount":
+			admin_amount(c)
+			fmt.Println("ADMIN AMOUNT")
+
 		default:
 			fmt.Println("Комманда отсутствует")
 		}

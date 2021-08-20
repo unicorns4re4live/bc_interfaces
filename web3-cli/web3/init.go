@@ -12,7 +12,7 @@ import (
 )
 
 //Получаем наш instance, сеть и публичный ключ
-func InitEthereumData(privKey string) (*ethclient.Client,*ecdsa.PrivateKey, *contract.Storage){
+func InitEthereumData(privKey string) (*ethclient.Client,*ecdsa.PrivateKey, *contract.Change){
 	var configs EthereumConfigs
 	plan, _:= ioutil.ReadFile("EthereumConfig.json") // JSON с конфигами
 	err := json.Unmarshal(plan, &configs)
