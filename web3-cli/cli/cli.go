@@ -34,6 +34,12 @@ func (c *cli) ReadCommands() {
 		case "create": {
 			create_user(c, cmd.args)
 			fmt.Println("USER CREATED")
+
+		}
+
+		case "transfer": {
+			create_transfer(c, cmd.args)
+			fmt.Println("TRANSFER CREATED")
 		}
 
 
