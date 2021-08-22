@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Основы Vue</title>
+    <link rel="stylesheet" href="theme.css" />
+  </head>
+
+  <body>
+    <div id="app" class="container">
+      <h1>Текущий юзер: {{currentAccount}}</h1>
+      <div class="result">
+        <h2 v-if="results.num">Значение в хранилище: {{results.num}}</h2>
+        <button @click="getFromStorage">Get from store</button>
+      </div>
+      <div class="register">
+        <input v-model="sendData.pwhash" type="text" />
+        <button @click="createUser">Sign up</button>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="abi.js"></script>
+    <script src="./web3.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
